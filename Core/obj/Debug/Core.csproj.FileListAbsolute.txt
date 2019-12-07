@@ -1,0 +1,15 @@
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\Core.dll
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\Core.pdb
+D:\Документы\Учеба\СОТ\Labi\Core\obj\Debug\Core.dll
+D:\Документы\Учеба\СОТ\Labi\Core\obj\Debug\Core.pdb
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\Books.mdf
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\Books_log.ldf
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\Core.dll.config
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\NUnit3.TestAdapter.dll
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\NUnit3.TestAdapter.pdb
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\nunit.engine.dll
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\nunit.engine.api.dll
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\nunit.framework.dll
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\nunit.framework.pdb
+D:\Документы\Учеба\СОТ\Labi\Core\bin\Debug\nunit.framework.xml
+D:\Документы\Учеба\СОТ\Labi\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache

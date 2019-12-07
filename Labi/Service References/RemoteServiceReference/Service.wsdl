@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://tempuri.org/BooksDataSet.xsd" />
+      <s:import schemaLocation="http://localhost:58153/Service.asmx?schema=BooksDataSet" namespace="http://tempuri.org/BooksDataSet.xsd" />
+      <s:element name="GetAllBooks">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBooksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBooksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllBooksDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllBooksDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllBooksDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewBooksRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewBooksRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewBooksRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteBookWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteBookWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBookByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getBookByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getBookByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddBookResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBookResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBooksTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateBooksTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBooksTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAuthors">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAuthorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAuthorsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAuthorsDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAuthorsDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAuthorsDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewAuthorsRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewAuthorsRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewAuthorsRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAuthorWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAuthorWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAuthorWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuthorByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuthorByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAuthorByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthor">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAuthorResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuthorsTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateAuthorsTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAuthorsTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPublishers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPublishersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPublishersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPublishersDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPublishersDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPublishersDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewPublishersRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewPublishersRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewPublishersRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePublisherWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePublisherWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePublisherWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublisherByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPublisherByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPublisherByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePublisher">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePublisherResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePublisherResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePublishersTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdatePublishersTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePublishersTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAuditories">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAuditoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAuditoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllAuditorsDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllAuditorsDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllAuditorsDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewAuditoriesRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewAuditoriesRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewAuditoriesRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAuditoryWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAuditoryWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteAuditoryWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuditoryById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getAuditoryByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getAuditoryByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuditory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuditoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAuditoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAuditoriesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateAuditoriesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAuditoriesTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCategories">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllCategoriesDirectlyFromDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllCategoriesDirectlyFromDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllCategoriesDirectlyFromDBResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NewCategoriesRow">
+        <s:complexType />
+      </s:element>
+      <s:element name="NewCategoriesRowResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NewCategoriesRowResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCategoryWithID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteCategoryWithIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteCategoryWithIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoryById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCategoryByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCategoryByIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="row">
+              <s:complexType>
+                <s:sequence>
+                  <s:any namespace="http://tempuri.org/BooksDataSet.xsd" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCategoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateCategoriesTable">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateCategoriesTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateCategoriesTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAllBooksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBooks" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBooksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBooksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBooksDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllBooksDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllBooksDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllBooksDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewBooksRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewBooksRow" />
+  </wsdl:message>
+  <wsdl:message name="NewBooksRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewBooksRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteBookWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteBookWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteBookWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getBookByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getBookByID" />
+  </wsdl:message>
+  <wsdl:message name="getBookByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getBookByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBookSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBook" />
+  </wsdl:message>
+  <wsdl:message name="AddBookSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBook" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBookSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBooksTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBooksTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBooksTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBooksTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuthorsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAuthors" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuthorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuthorsDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAuthorsDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuthorsDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAuthorsDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewAuthorsRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewAuthorsRow" />
+  </wsdl:message>
+  <wsdl:message name="NewAuthorsRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewAuthorsRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuthorWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAuthorWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuthorWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAuthorWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAuthorByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getAuthorByID" />
+  </wsdl:message>
+  <wsdl:message name="getAuthorByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getAuthorByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuthor" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorsTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorsTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuthorsTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuthorsTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPublishersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPublishers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPublishersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPublishersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPublishersDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPublishersDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPublishersDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPublishersDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewPublishersRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewPublishersRow" />
+  </wsdl:message>
+  <wsdl:message name="NewPublishersRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewPublishersRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePublisherWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePublisherWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeletePublisherWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePublisherWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPublisherByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:getPublisherByID" />
+  </wsdl:message>
+  <wsdl:message name="getPublisherByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:getPublisherByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePublisherSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePublisher" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePublisherSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePublisherResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePublishersTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePublishersTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePublishersTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePublishersTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAuditories" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAuditoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditorsDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllAuditorsDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllAuditorsDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllAuditorsDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewAuditoriesRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewAuditoriesRow" />
+  </wsdl:message>
+  <wsdl:message name="NewAuditoriesRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewAuditoriesRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuditoryWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAuditoryWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAuditoryWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAuditoryWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAuditoryByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getAuditoryById" />
+  </wsdl:message>
+  <wsdl:message name="getAuditoryByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getAuditoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuditorySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuditory" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuditorySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuditoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuditoriesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAuditoriesTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAuditoriesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAuditoriesTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCategoriesDirectlyFromDBSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesDirectlyFromDB" />
+  </wsdl:message>
+  <wsdl:message name="GetAllCategoriesDirectlyFromDBSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesDirectlyFromDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="NewCategoriesRowSoapIn">
+    <wsdl:part name="parameters" element="tns:NewCategoriesRow" />
+  </wsdl:message>
+  <wsdl:message name="NewCategoriesRowSoapOut">
+    <wsdl:part name="parameters" element="tns:NewCategoriesRowResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCategoryWithIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryWithID" />
+  </wsdl:message>
+  <wsdl:message name="DeleteCategoryWithIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryWithIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="getCategoryByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCategoriesTableSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateCategoriesTable" />
+  </wsdl:message>
+  <wsdl:message name="UpdateCategoriesTableSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateCategoriesTableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="GetAllBooks">
+      <wsdl:input message="tns:GetAllBooksSoapIn" />
+      <wsdl:output message="tns:GetAllBooksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooksDirectlyFromDB">
+      <wsdl:input message="tns:GetAllBooksDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllBooksDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewBooksRow">
+      <wsdl:input message="tns:NewBooksRowSoapIn" />
+      <wsdl:output message="tns:NewBooksRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookWithID">
+      <wsdl:input message="tns:DeleteBookWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteBookWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getBookByID">
+      <wsdl:input message="tns:getBookByIDSoapIn" />
+      <wsdl:output message="tns:getBookByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <wsdl:input message="tns:AddBookSoapIn" />
+      <wsdl:output message="tns:AddBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <wsdl:input message="tns:UpdateBookSoapIn" />
+      <wsdl:output message="tns:UpdateBookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooksTable">
+      <wsdl:input message="tns:UpdateBooksTableSoapIn" />
+      <wsdl:output message="tns:UpdateBooksTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthors">
+      <wsdl:input message="tns:GetAllAuthorsSoapIn" />
+      <wsdl:output message="tns:GetAllAuthorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthorsDirectlyFromDB">
+      <wsdl:input message="tns:GetAllAuthorsDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllAuthorsDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewAuthorsRow">
+      <wsdl:input message="tns:NewAuthorsRowSoapIn" />
+      <wsdl:output message="tns:NewAuthorsRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorWithID">
+      <wsdl:input message="tns:DeleteAuthorWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteAuthorWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorByID">
+      <wsdl:input message="tns:getAuthorByIDSoapIn" />
+      <wsdl:output message="tns:getAuthorByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthor">
+      <wsdl:input message="tns:UpdateAuthorSoapIn" />
+      <wsdl:output message="tns:UpdateAuthorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorsTable">
+      <wsdl:input message="tns:UpdateAuthorsTableSoapIn" />
+      <wsdl:output message="tns:UpdateAuthorsTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishers">
+      <wsdl:input message="tns:GetAllPublishersSoapIn" />
+      <wsdl:output message="tns:GetAllPublishersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishersDirectlyFromDB">
+      <wsdl:input message="tns:GetAllPublishersDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllPublishersDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewPublishersRow">
+      <wsdl:input message="tns:NewPublishersRowSoapIn" />
+      <wsdl:output message="tns:NewPublishersRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublisherWithID">
+      <wsdl:input message="tns:DeletePublisherWithIDSoapIn" />
+      <wsdl:output message="tns:DeletePublisherWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPublisherByID">
+      <wsdl:input message="tns:getPublisherByIDSoapIn" />
+      <wsdl:output message="tns:getPublisherByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublisher">
+      <wsdl:input message="tns:UpdatePublisherSoapIn" />
+      <wsdl:output message="tns:UpdatePublisherSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublishersTable">
+      <wsdl:input message="tns:UpdatePublishersTableSoapIn" />
+      <wsdl:output message="tns:UpdatePublishersTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditories">
+      <wsdl:input message="tns:GetAllAuditoriesSoapIn" />
+      <wsdl:output message="tns:GetAllAuditoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <wsdl:input message="tns:GetAllAuditorsDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllAuditorsDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewAuditoriesRow">
+      <wsdl:input message="tns:NewAuditoriesRowSoapIn" />
+      <wsdl:output message="tns:NewAuditoriesRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuditoryWithID">
+      <wsdl:input message="tns:DeleteAuditoryWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteAuditoryWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getAuditoryById">
+      <wsdl:input message="tns:getAuditoryByIdSoapIn" />
+      <wsdl:output message="tns:getAuditoryByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditory">
+      <wsdl:input message="tns:UpdateAuditorySoapIn" />
+      <wsdl:output message="tns:UpdateAuditorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditoriesTable">
+      <wsdl:input message="tns:UpdateAuditoriesTableSoapIn" />
+      <wsdl:output message="tns:UpdateAuditoriesTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input message="tns:GetAllCategoriesSoapIn" />
+      <wsdl:output message="tns:GetAllCategoriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategoriesDirectlyFromDB">
+      <wsdl:input message="tns:GetAllCategoriesDirectlyFromDBSoapIn" />
+      <wsdl:output message="tns:GetAllCategoriesDirectlyFromDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NewCategoriesRow">
+      <wsdl:input message="tns:NewCategoriesRowSoapIn" />
+      <wsdl:output message="tns:NewCategoriesRowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategoryWithID">
+      <wsdl:input message="tns:DeleteCategoryWithIDSoapIn" />
+      <wsdl:output message="tns:DeleteCategoryWithIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryById">
+      <wsdl:input message="tns:getCategoryByIdSoapIn" />
+      <wsdl:output message="tns:getCategoryByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input message="tns:UpdateCategorySoapIn" />
+      <wsdl:output message="tns:UpdateCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategoriesTable">
+      <wsdl:input message="tns:UpdateCategoriesTableSoapIn" />
+      <wsdl:output message="tns:UpdateCategoriesTableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllBooks">
+      <soap:operation soapAction="http://tempuri.org/GetAllBooks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooksDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllBooksDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewBooksRow">
+      <soap:operation soapAction="http://tempuri.org/NewBooksRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteBookWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookByID">
+      <soap:operation soapAction="http://tempuri.org/getBookByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <soap:operation soapAction="http://tempuri.org/AddBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap:operation soapAction="http://tempuri.org/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooksTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateBooksTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthors">
+      <soap:operation soapAction="http://tempuri.org/GetAllAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthorsDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllAuthorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAuthorsRow">
+      <soap:operation soapAction="http://tempuri.org/NewAuthorsRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteAuthorWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorByID">
+      <soap:operation soapAction="http://tempuri.org/getAuthorByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthor">
+      <soap:operation soapAction="http://tempuri.org/UpdateAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorsTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateAuthorsTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishers">
+      <soap:operation soapAction="http://tempuri.org/GetAllPublishers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishersDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllPublishersDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPublishersRow">
+      <soap:operation soapAction="http://tempuri.org/NewPublishersRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublisherWithID">
+      <soap:operation soapAction="http://tempuri.org/DeletePublisherWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublisherByID">
+      <soap:operation soapAction="http://tempuri.org/getPublisherByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublisher">
+      <soap:operation soapAction="http://tempuri.org/UpdatePublisher" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublishersTable">
+      <soap:operation soapAction="http://tempuri.org/UpdatePublishersTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditories">
+      <soap:operation soapAction="http://tempuri.org/GetAllAuditories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllAuditorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAuditoriesRow">
+      <soap:operation soapAction="http://tempuri.org/NewAuditoriesRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuditoryWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteAuditoryWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuditoryById">
+      <soap:operation soapAction="http://tempuri.org/getAuditoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditory">
+      <soap:operation soapAction="http://tempuri.org/UpdateAuditory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditoriesTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateAuditoriesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategoriesDirectlyFromDB">
+      <soap:operation soapAction="http://tempuri.org/GetAllCategoriesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCategoriesRow">
+      <soap:operation soapAction="http://tempuri.org/NewCategoriesRow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategoryWithID">
+      <soap:operation soapAction="http://tempuri.org/DeleteCategoryWithID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryById">
+      <soap:operation soapAction="http://tempuri.org/getCategoryById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategoriesTable">
+      <soap:operation soapAction="http://tempuri.org/UpdateCategoriesTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllBooks">
+      <soap12:operation soapAction="http://tempuri.org/GetAllBooks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBooksDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllBooksDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewBooksRow">
+      <soap12:operation soapAction="http://tempuri.org/NewBooksRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBookWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteBookWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBookByID">
+      <soap12:operation soapAction="http://tempuri.org/getBookByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBook">
+      <soap12:operation soapAction="http://tempuri.org/AddBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBook">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBooksTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBooksTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthors">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAuthors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuthorsDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAuthorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAuthorsRow">
+      <soap12:operation soapAction="http://tempuri.org/NewAuthorsRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuthorWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAuthorWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuthorByID">
+      <soap12:operation soapAction="http://tempuri.org/getAuthorByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthor">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAuthor" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuthorsTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAuthorsTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishers">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPublishers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPublishersDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPublishersDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewPublishersRow">
+      <soap12:operation soapAction="http://tempuri.org/NewPublishersRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePublisherWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeletePublisherWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPublisherByID">
+      <soap12:operation soapAction="http://tempuri.org/getPublisherByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublisher">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePublisher" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePublishersTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePublishersTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditories">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAuditories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllAuditorsDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllAuditorsDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewAuditoriesRow">
+      <soap12:operation soapAction="http://tempuri.org/NewAuditoriesRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAuditoryWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAuditoryWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAuditoryById">
+      <soap12:operation soapAction="http://tempuri.org/getAuditoryById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditory">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAuditory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAuditoriesTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAuditoriesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategoriesDirectlyFromDB">
+      <soap12:operation soapAction="http://tempuri.org/GetAllCategoriesDirectlyFromDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NewCategoriesRow">
+      <soap12:operation soapAction="http://tempuri.org/NewCategoriesRow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategoryWithID">
+      <soap12:operation soapAction="http://tempuri.org/DeleteCategoryWithID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCategoryById">
+      <soap12:operation soapAction="http://tempuri.org/getCategoryById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategoriesTable">
+      <soap12:operation soapAction="http://tempuri.org/UpdateCategoriesTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:58153/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:58153/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

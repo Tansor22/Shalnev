@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://tempuri.org/BooksDataSet.xsd" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:mstns="http://tempuri.org/BooksDataSet.xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://tempuri.org/BooksDataSet.xsd" id="BooksDataSet" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element msdata:IsDataSet="true" msdata:UseCurrentLocale="true" name="BooksDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Auditories">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="auditory_id" type="xs:int" />
+              <xs:element minOccurs="0" name="name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Authors">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="author_id" type="xs:int" />
+              <xs:element minOccurs="0" name="first_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="second_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Books">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="book_id" type="xs:int" />
+              <xs:element name="author_id" type="xs:int" />
+              <xs:element minOccurs="0" name="title">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="publisher_id" type="xs:int" />
+              <xs:element minOccurs="0" name="price" type="xs:double" />
+              <xs:element name="category_id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Categories">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="category_id" type="xs:int" />
+              <xs:element minOccurs="0" name="name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="auditory_id" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Publishers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element msdata:ReadOnly="true" msdata:AutoIncrement="true" name="publisher_id" type="xs:int" />
+              <xs:element minOccurs="0" name="name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element minOccurs="0" name="url">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique msdata:PrimaryKey="true" name="Constraint1">
+      <xs:selector xpath=".//mstns:Auditories" />
+      <xs:field xpath="mstns:auditory_id" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Authors_Constraint1">
+      <xs:selector xpath=".//mstns:Authors" />
+      <xs:field xpath="mstns:author_id" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Books_Constraint1">
+      <xs:selector xpath=".//mstns:Books" />
+      <xs:field xpath="mstns:book_id" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Categories_Constraint1">
+      <xs:selector xpath=".//mstns:Categories" />
+      <xs:field xpath="mstns:category_id" />
+    </xs:unique>
+    <xs:unique msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true" name="Publishers_Constraint1">
+      <xs:selector xpath=".//mstns:Publishers" />
+      <xs:field xpath="mstns:publisher_id" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Authors_Books" msdata:parent="Authors" msdata:child="Books" msdata:parentkey="author_id" msdata:childkey="author_id" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" />
+      <msdata:Relationship name="Auditories_Categories" msdata:parent="Auditories" msdata:child="Categories" msdata:parentkey="auditory_id" msdata:childkey="auditory_id" />
+      <msdata:Relationship name="Publishers_Books" msdata:parent="Publishers" msdata:child="Books" msdata:parentkey="publisher_id" msdata:childkey="publisher_id" />
+      <msdata:Relationship name="Categories_Books" msdata:parent="Categories" msdata:child="Books" msdata:parentkey="category_id" msdata:childkey="category_id" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
